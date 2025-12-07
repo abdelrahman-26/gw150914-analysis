@@ -30,19 +30,41 @@ This project performs time-domain and frequency-domain signal processing on stra
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/abdelrahman-26/gw150914-analysis.git]
+   git clone [https://github.com/abdelrahman-26/gw150914-analysis.git](https://github.com/abdelrahman-26/gw150914-analysis.git)
+   ```
 
 2. Install the required libraries:
    ```bash
    pip install numpy scipy matplotlib gwpy gwosc astropy
+   ```
 
 ## Usage
 Run the Jupyter Notebook to reproduce the analysis:
   ```bash
-     pip install numpy scipy matplotlib gwpy gwosc astropy
+     jupyter notebook notebooks/GW150914_Analysis.ipynb
   ```
+
 ## Results
-The analysis successfully isolates the gravitational wave strain from the background noise, confirming the "chirp" signal characteristic of a compact binary coalescence.
+
+The processing pipeline successfully extracted the gravitational wave signal from the background noise in both the Hanford and Livingston detectors.
+
+### 1. Time-Frequency Analysis (Spectrograms)
+The Q-transform reveals the characteristic "chirp" signal, a sharp increase in frequency and amplitude at the moment of merger, visible in both locations.
+
+**Hanford (H1)**
+![H1 Spectrogram](plots/spectrogram_h1.png)
+
+**Livingston (L1)**
+![L1 Spectrogram](plots/spectrogram_l1.png)
+
+### 2. Reconstructed Waveforms
+After applying whitening and a 35-350 Hz bandpass filter, the strain signals from both detectors clearly show the inspiral, merger, and ringdown phases characteristic of a binary black hole coalescence.
+
+**Hanford (H1)**
+![H1 Waveform](plots/filtered_h1.png)
+
+**Livingston (L1)**
+![L1 Waveform](plots/filtered_l1.png)
 
 ## License
 Distributed under the MIT License. See `LICENSE` for more information.
